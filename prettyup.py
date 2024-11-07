@@ -40,6 +40,7 @@ def create_section_text(section_title, n_width = 80):
 
     return [blank_lines, title_line, blank_lines]
 
+
 def write_code(code, filename):
     """ """
     with open(filename, "w") as file:
@@ -49,6 +50,7 @@ def write_code(code, filename):
 # ----------------------------------------------------------------------------# 
 # ----------------           Pretty Core Functions            ----------------# 
 # ----------------------------------------------------------------------------# 
+
 
 def add_double_lines(new_code):
     """ """
@@ -66,6 +68,7 @@ def add_double_lines(new_code):
 
     return new_code
 
+
 def tabs_to_spaces(new_code):
     """ """
     if new_code[-1].startswith("\t"):
@@ -73,6 +76,7 @@ def tabs_to_spaces(new_code):
         new_code[-1] = SPACE_TAB * n_tabs + new_code[-1].lstrip("\t")
 
     return new_code
+
 
 def comment_after_function(new_code, ntabs=1):
     """ """
@@ -84,12 +88,6 @@ def comment_after_function(new_code, ntabs=1):
 
     return new_code
 
-def detect_open_function(new_code):
-    """ """
-    open_def = False
-    for line in new_code:
-        pass
-    ## end function
 
 def replace_sections(new_code):
     """ """
@@ -108,7 +106,10 @@ def replace_sections(new_code):
     return new_code
 
 
-#\section Pretty Up Core
+# ----------------------------------------------------------------------------# 
+# --------------------           Pretty Up Core           --------------------# 
+# ----------------------------------------------------------------------------# 
+
 
 def run_pretty_up_core(o_code):
     """ """
@@ -157,6 +158,7 @@ def main():
     for input in args.inputs:
         print(f"\t - {input}")
         pretty_up(input)
+
 
 if __name__ == '__main__':
     main()
